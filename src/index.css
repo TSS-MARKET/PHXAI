@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240, 30%, 8%; /* Dark futuristic blue */
+    --foreground: 220, 100%, 95%; /* Bright cyan for contrast */
+    --border: 240, 20%, 25%;
+    --input: 240, 20%, 18%;
+    --ring: 220, 100%, 75%;
+    --primary: 210, 100%, 50%;
+    --primary-foreground: 210, 100%, 85%;
+    --secondary: 280, 70%, 50%;
+    --secondary-foreground: 280, 100%, 85%;
+    --destructive: 0, 80%, 50%;
+    --destructive-foreground: 0, 100%, 85%;
+    --muted: 240, 10%, 30%;
+    --muted-foreground: 240, 10%, 60%;
+    --accent: 200, 100%, 50%;
+    --accent-foreground: 200, 100%, 85%;
+    --popover: 240, 15%, 10%;
+    --popover-foreground: 240, 100%, 90%;
+    --card: 240, 15%, 12%;
+    --card-foreground: 240, 100%, 85%;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-lg border border-border p-6 rounded-lg;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+  }
+  .border-glow {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    .neon-glow {
+      text-shadow: 0 0 10px var(--tw-color-secondary), 0 0 20px var(--tw-color-secondary), 0 0 30px var(--tw-color-secondary);
+    }
+    
+    .neon-text {
+      color: var(--tw-color-secondary);
+      text-shadow: 0 0 5px var(--tw-color-secondary), 0 0 10px var(--tw-color-secondary);
+    }
+    
+    .neon-border {
+      box-shadow: 0 0 10px var(--tw-color-secondary), 0 0 20px var(--tw-color-secondary);
+    }
+    
+    /* Optional: For hover glow effects */
+    .neon-hover:hover {
+      filter: brightness(1.2) drop-shadow(0 0 10px var(--tw-color-secondary));
+    }
+    
+  }
+}

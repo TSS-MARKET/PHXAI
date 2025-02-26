@@ -28,13 +28,13 @@ export default function AiTools() {
 
   return (
     <main className="relative min-h-screen bg-[#0a0f1e] text-white">
-      {/* 3D Glow Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-10 left-1/4 h-60 w-60 bg-[#ff00ff]/40 blur-3xl opacity-70 animate-pulse" />
-        <div className="absolute bottom-10 right-1/4 h-60 w-60 bg-[#6f00ff]/40 blur-3xl opacity-70 animate-pulse" />
+      {/* Simplified Glow Effects (no animate-pulse) */}
+      <div className="absolute inset-0">
+        <div className="absolute top-10 left-1/4 h-60 w-60 bg-[#ff00ff]/30 blur-3xl opacity-60" />
+        <div className="absolute bottom-10 right-1/4 h-60 w-60 bg-[#6f00ff]/30 blur-3xl opacity-60" />
       </div>
 
-      {/* DESKTOP Back Button (absolute) */}
+      {/* Desktop Back Button (absolute) */}
       <div className="hidden sm:block absolute top-6 left-6 z-10">
         <Button
           variant="ghost"
@@ -47,7 +47,7 @@ export default function AiTools() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-6">
-        {/* MOBILE Header Row (Back Button + Title) */}
+        {/* Mobile Header (Back + Title) */}
         <div className="sm:hidden flex flex-col gap-4 mb-6">
           <Button
             variant="ghost"
@@ -67,7 +67,7 @@ export default function AiTools() {
           </div>
         </div>
 
-        {/* DESKTOP Title (no back button) */}
+        {/* Desktop Title */}
         <div className="hidden sm:block mb-6 text-center">
           <h1 className="text-6xl md:text-7xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
             AI Tools Hub
@@ -91,21 +91,20 @@ export default function AiTools() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="p-4 space-y-3 border border-[#ff00ff]/60 rounded-lg bg-[#121826]/50 hover:bg-[#ff00ff]/10 transition-all cursor-pointer backdrop-blur-md shadow-xl shadow-[#ff00ff]/30"
+              className="p-4 space-y-3 border border-[#ff00ff]/60 rounded-lg bg-[#121826]/50 hover:bg-[#ff00ff]/10 transition-all cursor-pointer backdrop-blur-md shadow-md"
               onClick={() => setSelectedTool(tool.name)}
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-base sm:text-xl font-semibold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent uppercase">
                   {tool.name}
                 </h3>
-                {/* Brain Icon */}
                 <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff00ff]" />
               </div>
               <p className="text-sm sm:text-base text-[#e0e7ff]">
                 {tool.description}
               </p>
               <Button
-                className="w-full bg-[#ff00ff]/20 hover:bg-[#ff00ff]/30 text-[#ff00ff] border border-[#ff00ff]/60 transition-all rounded-full uppercase tracking-widest font-bold py-2 sm:py-3 text-sm sm:text-base"
+                className="w-full bg-[#ff00ff]/20 hover:bg-[#ff00ff]/30 text-[#ff00ff] border border-[#ff00ff]/60 transition-all rounded-full uppercase tracking-widest font-bold py-2 sm:py-3 text-xs sm:text-sm whitespace-nowrap"
               >
                 Launch Tool
               </Button>
@@ -123,25 +122,30 @@ export default function AiTools() {
             exit={{ opacity: 0, scale: 0.9 }}
             className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-md z-50 px-4"
           >
-            <div className="p-6 bg-[#121826] border border-[#ff00ff]/60 rounded-lg shadow-2xl max-w-sm w-full text-center">
-              <Lock className="h-8 w-8 sm:h-12 sm:w-12 text-[#ff00ff] mx-auto mb-4" />
-              <h2 className="text-xl sm:text-2xl font-bold text-[#e0e7ff]">
+            {/* 3D effect on hover */}
+            <motion.div
+              whileHover={{ rotateX: 3, rotateY: 3, scale: 1.03 }}
+              style={{ perspective: "1000px" }}
+              className="p-6 bg-[#121826] border border-[#ff00ff]/60 rounded-md shadow-[0_0_15px_#ff00ff] max-w-md w-full text-center"
+            >
+              <Lock className="h-8 w-8 sm:h-12 sm:w-12 text-[#ff00ff] mx-auto mb-2" />
+              <h2 className="text-xl sm:text-2xl font-bold text-[#e0e7ff] mb-2">
                 Access Restricted
               </h2>
-              <p className="text-sm sm:text-base text-[#e0e7ff] mt-2">
+              <p className="text-sm sm:text-base text-[#e0e7ff] mb-4">
                 You must hold at least{" "}
                 <span className="font-bold text-[#ff00ff]">200K $PHX</span> to use{" "}
                 {selectedTool}.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button
-                  className="bg-[#ff00ff]/20 hover:bg-[#ff00ff]/30 text-[#ff00ff] border border-[#ff00ff]/60 transition-all rounded-full uppercase tracking-widest px-6 py-2 text-sm"
+                  className="bg-[#ff00ff]/20 hover:bg-[#ff00ff]/30 text-[#ff00ff] border border-[#ff00ff]/60 transition-all rounded-full uppercase tracking-widest px-4 sm:px-6 py-2 text-xs sm:text-sm whitespace-nowrap"
                   onClick={() => window.open("https://jup.ag", "_blank")}
                 >
                   Buy on Jupiter
                 </Button>
                 <Button
-                  className="bg-[#6f00ff]/20 hover:bg-[#6f00ff]/30 text-[#6f00ff] border border-[#6f00ff]/60 transition-all rounded-full uppercase tracking-widest px-6 py-2 text-sm"
+                  className="bg-[#6f00ff]/20 hover:bg-[#6f00ff]/30 text-[#6f00ff] border border-[#6f00ff]/60 transition-all rounded-full uppercase tracking-widest px-4 sm:px-6 py-2 text-xs sm:text-sm whitespace-nowrap"
                   onClick={() => window.open("https://pancakeswap.finance", "_blank")}
                 >
                   Buy on PancakeSwap
@@ -154,7 +158,7 @@ export default function AiTools() {
               >
                 Close
               </Button>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

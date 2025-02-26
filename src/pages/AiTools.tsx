@@ -4,37 +4,61 @@ import { ArrowLeft, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Tools Data
+// Define AI Tools with creative logo text instead of emoji icons
 const tools = [
-  {
-    name: "Twitter Tracker",
-    description: "Track crypto sentiment on Twitter.",
-    icon: <span className="text-[#ff00ff] text-2xl">🐦</span>,
+  { 
+    name: "Twitter Tracker", 
+    description: "Track crypto sentiment on Twitter.", 
+    icon: (
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">
+        TWEET
+      </span>
+    ),
   },
-  {
-    name: "Market Analyser",
-    description: "Analyse market trends and data.",
-    icon: <span className="text-[#6f00ff] text-2xl">📊</span>,
+  { 
+    name: "Market Analyser", 
+    description: "Analyse market trends and data.", 
+    icon: (
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#6f00ff] to-[#ff00ff] bg-clip-text text-transparent">
+        MARKET
+      </span>
+    ),
   },
-  {
-    name: "Sentiment Analyser",
-    description: "Gauge market sentiment with AI.",
-    icon: <span className="text-[#ff00ff] text-2xl">🧠</span>,
+  { 
+    name: "Sentiment Analyser", 
+    description: "Gauge market sentiment with AI.", 
+    icon: (
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">
+        SENTI
+      </span>
+    ),
   },
-  {
-    name: "Token Creation",
-    description: "Easily create your own tokens.",
-    icon: <span className="text-[#6f00ff] text-2xl">💰</span>,
+  { 
+    name: "Token Creation", 
+    description: "Easily create your own tokens.", 
+    icon: (
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#6f00ff] to-[#ff00ff] bg-clip-text text-transparent">
+        TOKEN
+      </span>
+    ),
   },
-  {
-    name: "Liquidity Pool Creator",
-    description: "Create and manage liquidity pools.",
-    icon: <span className="text-[#ff00ff] text-2xl">🌊</span>,
+  { 
+    name: "Liquidity Pool Creator", 
+    description: "Create and manage liquidity pools.", 
+    icon: (
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">
+        POOL
+      </span>
+    ),
   },
-  {
-    name: "Trending News",
-    description: "Stay updated with AI-curated crypto news.",
-    icon: <span className="text-[#6f00ff] text-2xl">📰</span>,
+  { 
+    name: "Trending News", 
+    description: "Stay updated with AI-curated crypto news.", 
+    icon: (
+      <span className="text-2xl font-bold bg-gradient-to-r from-[#6f00ff] to-[#ff00ff] bg-clip-text text-transparent">
+        NEWS
+      </span>
+    ),
   },
 ];
 
@@ -43,7 +67,6 @@ export default function AiTools() {
   const [selectedTool, setSelectedTool] = useState<string | null>(null);
 
   const handleBack = () => {
-    // Return to previous page if possible, else go home
     if (window.history.state && window.history.state.idx > 0) {
       navigate(-1);
     } else {
@@ -61,8 +84,8 @@ export default function AiTools() {
 
       {/* Page Container */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-6">
-        {/* Back Button */}
-        <div className="flex items-center gap-4 mb-6">
+        {/* Back Button + Title */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
           <Button
             variant="ghost"
             className="text-[#ff00ff] hover:text-[#6f00ff] transition-all"
@@ -83,7 +106,7 @@ export default function AiTools() {
           </div>
         </div>
 
-        {/* AI Tools Grid */}
+        {/* Tools Grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

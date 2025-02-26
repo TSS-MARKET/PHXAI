@@ -121,7 +121,7 @@ export default function Navbar() {
                   setIsMobileMenuOpen(false);
                   navigate("/ai-tools");
                 }}
-                className="bg-[#6f00ff] hover:bg-[#6f00ff]/90 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform flex items-center gap-2"
+                className="bg-[#6f00ff] hover:bg-[#6f00ff]/90 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform flex items-center justify-center gap-2"
               >
                 AI TOOLS
               </button>

@@ -86,7 +86,10 @@ export default function Roadmap() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{
+                duration: 0.8,
+                delay: index === 3 ? 0.1 : index * 0.2, // Q4 gets a 0.1s delay, others use index*0.2
+              }}
               className="p-6 bg-[#121826]/50 border border-[#ff00ff]/60 rounded-lg shadow-lg"
             >
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">

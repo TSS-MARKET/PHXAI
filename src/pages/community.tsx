@@ -57,7 +57,7 @@ export default function Community() {
         </motion.div>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-8">
           <motion.a
-            href="https://t.me/yourtelegram"
+            href="https://t.me/phoenixaiagent"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1, rotate: 5 }}
@@ -75,7 +75,7 @@ export default function Community() {
             Discord <ArrowUpRight className="h-5 w-5" />
           </motion.a>
           <motion.a
-            href="https://twitter.com/yourtwitter"
+            href="https://twitter.com/phoenixcryptoai"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1, rotate: 5 }}

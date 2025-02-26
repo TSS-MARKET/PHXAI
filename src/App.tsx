@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom"; // Changed to HashRouter
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
@@ -25,7 +25,7 @@ import Navbar from "@/components/Navbar";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         {/* Global Navbar */}
@@ -48,7 +48,7 @@ const App = () => (
         <Sonner />
       </TooltipProvider>
     </QueryClientProvider>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;

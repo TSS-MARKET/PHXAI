@@ -45,7 +45,7 @@ export default function AiTools() {
   };
 
   return (
-    <main className="relative min-h-screen bg-[#0a0f1e] text-white overflow-hidden">
+    <main className="relative min-h-screen bg-[#0a0f1e] text-white">
       {/* 3D Glow Effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 left-1/4 h-60 w-60 bg-[#ff00ff]/40 blur-3xl opacity-70 animate-pulse" />

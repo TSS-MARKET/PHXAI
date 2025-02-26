@@ -40,27 +40,47 @@ export default function BuyToken() {
         <div className="absolute bottom-10 right-1/4 h-60 w-60 bg-[#6f00ff]/40 blur-3xl opacity-70 animate-pulse" />
       </div>
 
+      {/* DESKTOP BACK BUTTON (≥sm) */}
+      <div className="hidden sm:block absolute top-6 left-6 z-10">
+        <Button
+          variant="ghost"
+          className="text-[#ff00ff] hover:text-[#6f00ff] transition-all"
+          onClick={handleBack}
+        >
+          <ArrowLeft className="mr-2 h-5 w-5" />
+          <span className="text-lg font-bold tracking-wide uppercase">Back</span>
+        </Button>
+      </div>
+
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-6">
-        {/* Back Button + Title */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
+        {/* MOBILE HEADER (<sm): Back + Title */}
+        <div className="sm:hidden flex flex-col gap-4 mb-6">
           <Button
             variant="ghost"
-            className="text-[#ff00ff] hover:text-[#6f00ff] transition-all"
+            className="text-[#ff00ff] hover:text-[#6f00ff] transition-all self-start"
             onClick={handleBack}
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
-            <span className="text-base sm:text-lg font-bold tracking-wide uppercase">
-              Back
-            </span>
+            <span className="text-base font-bold tracking-wide uppercase">Back</span>
           </Button>
-          <div>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
               Buy $PHX Token
             </h1>
-            <p className="text-sm sm:text-lg uppercase mt-2 tracking-wide text-[#e0e7ff]">
+            <p className="text-sm uppercase mt-2 tracking-wide text-[#e0e7ff]">
               The Future of AI-Powered Crypto Trading
             </p>
           </div>
+        </div>
+
+        {/* DESKTOP TITLE (≥sm): Centered */}
+        <div className="hidden sm:block text-center mb-6">
+          <h1 className="text-6xl md:text-7xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
+            Buy $PHX Token
+          </h1>
+          <p className="text-lg uppercase mt-2 tracking-wide text-[#e0e7ff]">
+            The Future of AI-Powered Crypto Trading
+          </p>
         </div>
 
         {/* DEX Buy Buttons */}

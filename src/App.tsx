@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react"
 import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom"; // Changed to HashRouter
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";

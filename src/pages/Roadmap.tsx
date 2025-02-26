@@ -5,14 +5,31 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const roadmapItems = [
-  { phase: "Phase 1", description: "Platform Launch & Community Building" },
-  { phase: "Phase 2", description: "Token Integration & Partnerships" },
-  { phase: "Phase 3", description: "Advanced AI & Automation" },
-  { phase: "Phase 4", description: "Global Expansion" },
+  {
+    phase: "Q1 2025",
+    description:
+      "Launch beta platform on BSC with core AI tools (sentiment analysis & Twitter tracker). Begin initial user onboarding and community building.",
+  },
+  {
+    phase: "Q2 2025",
+    description:
+      "Roll out full feature set including automated trading and token sale integration. Launch $PHX token with staking and governance.",
+  },
+  {
+    phase: "Q3 2025",
+    description:
+      "Expand globally with multi-chain support (e.g., Solana). Enhance AI functionalities and additional monetization streams.",
+  },
+  {
+    phase: "Q4 2025",
+    description:
+      "TBD: Additional future enhancements and further developments.",
+  },
 ];
 
 export default function Roadmap() {
   const navigate = useNavigate();
+
   const handleBack = () => {
     if (window.history.state && window.history.state.idx > 0) {
       navigate(-1);
@@ -69,7 +86,7 @@ export default function Roadmap() {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.3 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
               className="p-6 bg-[#121826]/50 border border-[#ff00ff]/60 rounded-lg shadow-lg"
             >
               <h2 className="text-3xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">

@@ -41,15 +41,17 @@ export default function BuyToken() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-6">
-        {/* Back Button */}
-        <div className="flex items-center gap-4 mb-6">
+        {/* Back Button + Title */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
           <Button
             variant="ghost"
             className="text-[#ff00ff] hover:text-[#6f00ff] transition-all"
             onClick={handleBack}
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
-            <span className="text-base sm:text-lg font-bold tracking-wide uppercase">Back</span>
+            <span className="text-base sm:text-lg font-bold tracking-wide uppercase">
+              Back
+            </span>
           </Button>
           <div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
@@ -97,9 +99,13 @@ export default function BuyToken() {
           className="mt-6 p-4 border border-[#ff00ff]/60 rounded-lg bg-[#121826]/50 backdrop-blur-md shadow-2xl shadow-[#ff00ff]/30"
         >
           <div className="flex flex-col gap-2 bg-[#ff00ff]/10 p-3 rounded-lg">
-            <p className="text-sm sm:text-base uppercase font-semibold text-[#e0e7ff]">Contract Address:</p>
+            <p className="text-sm sm:text-base uppercase font-semibold text-[#e0e7ff]">
+              Contract Address:
+            </p>
             <div className="flex items-center justify-between gap-3">
-              <code className="text-sm sm:text-base text-[#ff00ff] font-mono break-all">{CONTRACT_ADDRESS}</code>
+              <code className="text-sm sm:text-base text-[#ff00ff] font-mono break-all">
+                {CONTRACT_ADDRESS}
+              </code>
               <Button
                 variant="ghost"
                 size="icon"

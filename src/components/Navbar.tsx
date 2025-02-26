@@ -73,7 +73,7 @@ export default function Navbar() {
           </motion.button>
         </div>
 
-        {/* Mobile Right Section: Hamburger Menu & Mobile Connect Wallet */}
+        {/* Mobile Right Section: Hamburger Menu & Mobile Connect Wallet Icon */}
         <div className="md:hidden flex items-center gap-4">
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -130,7 +130,7 @@ export default function Navbar() {
                   setIsMobileMenuOpen(false);
                   alert("Wallet Connect Coming Soon!");
                 }}
-                className="flex items-center gap-2 border border-[#ff00ff]/60 text-[#ff00ff] font-semibold py-2 px-4 rounded-full transition-all"
+                className="flex items-center justify-center gap-2 border border-[#ff00ff]/60 text-[#ff00ff] font-semibold py-2 px-4 rounded-full transition-all"
               >
                 Connect Wallet
               </button>

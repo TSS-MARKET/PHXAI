@@ -8,17 +8,17 @@ const roadmapItems = [
   {
     phase: "Q1 2025",
     description:
-      "Launch beta platform on BSC with core AI tools (sentiment analysis & Twitter tracker). Begin initial user onboarding and community building.",
+      "Launch beta platform on BSC with core AI tools. Begin initial user onboarding and community building.",
   },
   {
     phase: "Q2 2025",
     description:
-      "Roll out full feature set including automated trading and token sale integration. Launch $PHX token with staking and governance.",
+      "Roll out full feature set including automated trading and token sale integration.",
   },
   {
     phase: "Q3 2025",
     description:
-      "Expand globally with multi-chain support (e.g., Solana). Enhance AI functionalities and additional monetization streams.",
+      "Expand globally with multi-chain support. Enhance AI functionalities and additional monetization streams.",
   },
   {
     phase: "Q4 2025",

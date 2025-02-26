@@ -4,32 +4,14 @@ import { ArrowLeft, Lock, Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Define AI Tools (all use the Brain icon)
+// Tools array
 const tools = [
-  {
-    name: "Twitter Tracker",
-    description: "Track crypto sentiment on Twitter.",
-  },
-  {
-    name: "Market Analyser",
-    description: "Analyse market trends and data.",
-  },
-  {
-    name: "Sentiment Analyser",
-    description: "Gauge market sentiment with AI.",
-  },
-  {
-    name: "Token Creation",
-    description: "Easily create your own tokens.",
-  },
-  {
-    name: "Liquidity Pool Creator",
-    description: "Create and manage liquidity pools.",
-  },
-  {
-    name: "Trending News",
-    description: "Stay updated with AI-curated crypto news.",
-  },
+  { name: "Twitter Tracker", description: "Track crypto sentiment on Twitter." },
+  { name: "Market Analyser", description: "Analyse market trends and data." },
+  { name: "Sentiment Analyser", description: "Gauge market sentiment with AI." },
+  { name: "Token Creation", description: "Easily create your own tokens." },
+  { name: "Liquidity Pool Creator", description: "Create and manage liquidity pools." },
+  { name: "Trending News", description: "Stay updated with AI-curated crypto news." },
 ];
 
 export default function AiTools() {
@@ -52,27 +34,47 @@ export default function AiTools() {
         <div className="absolute bottom-10 right-1/4 h-60 w-60 bg-[#6f00ff]/40 blur-3xl opacity-70 animate-pulse" />
       </div>
 
+      {/* DESKTOP Back Button (absolute) */}
+      <div className="hidden sm:block absolute top-6 left-6 z-10">
+        <Button
+          variant="ghost"
+          className="text-[#ff00ff] hover:text-[#6f00ff] transition-all"
+          onClick={handleBack}
+        >
+          <ArrowLeft className="mr-2 h-5 w-5" />
+          <span className="text-lg font-bold tracking-wide uppercase">Back</span>
+        </Button>
+      </div>
+
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-6">
-        {/* Back Button + Title */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
+        {/* MOBILE Header Row (Back Button + Title) */}
+        <div className="sm:hidden flex flex-col gap-4 mb-6">
           <Button
             variant="ghost"
-            className="text-[#ff00ff] hover:text-[#6f00ff] transition-all"
+            className="text-[#ff00ff] hover:text-[#6f00ff] transition-all self-start"
             onClick={handleBack}
           >
             <ArrowLeft className="mr-2 h-5 w-5" />
-            <span className="text-base sm:text-lg font-bold tracking-wide uppercase">
-              Back
-            </span>
+            <span className="text-base font-bold tracking-wide uppercase">Back</span>
           </Button>
           <div>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
+            <h1 className="text-4xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
               AI Tools Hub
             </h1>
-            <p className="text-sm sm:text-lg uppercase mt-2 tracking-wide text-[#e0e7ff]">
+            <p className="text-sm uppercase mt-2 tracking-wide text-[#e0e7ff]">
               Explore Next-Gen AI Tools for Crypto Mastery
             </p>
           </div>
+        </div>
+
+        {/* DESKTOP Title (no back button) */}
+        <div className="hidden sm:block mb-6 text-center">
+          <h1 className="text-6xl md:text-7xl font-bold font-mono bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent tracking-widest drop-shadow-md">
+            AI Tools Hub
+          </h1>
+          <p className="text-lg uppercase mt-2 tracking-wide text-[#e0e7ff]">
+            Explore Next-Gen AI Tools for Crypto Mastery
+          </p>
         </div>
 
         {/* Tools Grid */}

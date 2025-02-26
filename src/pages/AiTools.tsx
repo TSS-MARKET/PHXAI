@@ -1,52 +1,34 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Lock } from "lucide-react";
+import { ArrowLeft, Lock, Brain } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Define AI Tools with creative text logos
+// Define AI Tools (all use the Brain icon)
 const tools = [
-  { 
-    name: "Twitter Tracker", 
-    description: "Track crypto sentiment on Twitter.", 
-    icon: (
-      <span className="ml-2 text-2xl font-bold text-[#ff00ff]">TW</span>
-    ),
+  {
+    name: "Twitter Tracker",
+    description: "Track crypto sentiment on Twitter.",
   },
-  { 
-    name: "Market Analyser", 
-    description: "Analyse market trends and data.", 
-    icon: (
-      <span className="ml-2 text-2xl font-bold text-[#6f00ff]">MA</span>
-    ),
+  {
+    name: "Market Analyser",
+    description: "Analyse market trends and data.",
   },
-  { 
-    name: "Sentiment Analyser", 
-    description: "Gauge market sentiment with AI.", 
-    icon: (
-      <span className="ml-2 text-2xl font-bold text-[#ff00ff]">SA</span>
-    ),
+  {
+    name: "Sentiment Analyser",
+    description: "Gauge market sentiment with AI.",
   },
-  { 
-    name: "Token Creation", 
-    description: "Easily create your own tokens.", 
-    icon: (
-      <span className="ml-2 text-2xl font-bold text-[#6f00ff]">TC</span>
-    ),
+  {
+    name: "Token Creation",
+    description: "Easily create your own tokens.",
   },
-  { 
-    name: "Liquidity Pool Creator", 
-    description: "Create and manage liquidity pools.", 
-    icon: (
-      <span className="ml-2 text-2xl font-bold text-[#ff00ff]">LP</span>
-    ),
+  {
+    name: "Liquidity Pool Creator",
+    description: "Create and manage liquidity pools.",
   },
-  { 
-    name: "Trending News", 
-    description: "Stay updated with AI-curated crypto news.", 
-    icon: (
-      <span className="ml-2 text-2xl font-bold text-[#6f00ff]">NEWS</span>
-    ),
+  {
+    name: "Trending News",
+    description: "Stay updated with AI-curated crypto news.",
   },
 ];
 
@@ -70,7 +52,6 @@ export default function AiTools() {
         <div className="absolute bottom-10 right-1/4 h-60 w-60 bg-[#6f00ff]/40 blur-3xl opacity-70 animate-pulse" />
       </div>
 
-      {/* Page Container */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 py-6">
         {/* Back Button + Title */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
@@ -111,11 +92,12 @@ export default function AiTools() {
               className="p-4 space-y-3 border border-[#ff00ff]/60 rounded-lg bg-[#121826]/50 hover:bg-[#ff00ff]/10 transition-all cursor-pointer backdrop-blur-md shadow-xl shadow-[#ff00ff]/30"
               onClick={() => setSelectedTool(tool.name)}
             >
-              <div className="flex items-center gap-3">
-                {tool.icon}
+              <div className="flex items-center justify-between">
                 <h3 className="text-base sm:text-xl font-semibold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent uppercase">
                   {tool.name}
                 </h3>
+                {/* Brain Icon */}
+                <Brain className="h-5 w-5 sm:h-6 sm:w-6 text-[#ff00ff]" />
               </div>
               <p className="text-sm sm:text-base text-[#e0e7ff]">
                 {tool.description}
@@ -141,9 +123,13 @@ export default function AiTools() {
           >
             <div className="p-6 bg-[#121826] border border-[#ff00ff]/60 rounded-lg shadow-2xl max-w-sm w-full text-center">
               <Lock className="h-8 w-8 sm:h-12 sm:w-12 text-[#ff00ff] mx-auto mb-4" />
-              <h2 className="text-xl sm:text-2xl font-bold text-[#e0e7ff]">Access Restricted</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-[#e0e7ff]">
+                Access Restricted
+              </h2>
               <p className="text-sm sm:text-base text-[#e0e7ff] mt-2">
-                You must hold at least <span className="font-bold text-[#ff00ff]">200K $PHX</span> to use {selectedTool}.
+                You must hold at least{" "}
+                <span className="font-bold text-[#ff00ff]">200K $PHX</span> to use{" "}
+                {selectedTool}.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
                 <Button

@@ -4,60 +4,48 @@ import { ArrowLeft, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Define AI Tools with creative logo text instead of emoji icons
+// Define AI Tools with creative text logos
 const tools = [
   { 
     name: "Twitter Tracker", 
     description: "Track crypto sentiment on Twitter.", 
     icon: (
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">
-        TWEET
-      </span>
+      <span className="ml-2 text-2xl font-bold text-[#ff00ff]">TW</span>
     ),
   },
   { 
     name: "Market Analyser", 
     description: "Analyse market trends and data.", 
     icon: (
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#6f00ff] to-[#ff00ff] bg-clip-text text-transparent">
-        MARKET
-      </span>
+      <span className="ml-2 text-2xl font-bold text-[#6f00ff]">MA</span>
     ),
   },
   { 
     name: "Sentiment Analyser", 
     description: "Gauge market sentiment with AI.", 
     icon: (
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">
-        SENTI
-      </span>
+      <span className="ml-2 text-2xl font-bold text-[#ff00ff]">SA</span>
     ),
   },
   { 
     name: "Token Creation", 
     description: "Easily create your own tokens.", 
     icon: (
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#6f00ff] to-[#ff00ff] bg-clip-text text-transparent">
-        TOKEN
-      </span>
+      <span className="ml-2 text-2xl font-bold text-[#6f00ff]">TC</span>
     ),
   },
   { 
     name: "Liquidity Pool Creator", 
     description: "Create and manage liquidity pools.", 
     icon: (
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent">
-        POOL
-      </span>
+      <span className="ml-2 text-2xl font-bold text-[#ff00ff]">LP</span>
     ),
   },
   { 
     name: "Trending News", 
     description: "Stay updated with AI-curated crypto news.", 
     icon: (
-      <span className="text-2xl font-bold bg-gradient-to-r from-[#6f00ff] to-[#ff00ff] bg-clip-text text-transparent">
-        NEWS
-      </span>
+      <span className="ml-2 text-2xl font-bold text-[#6f00ff]">NEWS</span>
     ),
   },
 ];

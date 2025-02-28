@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Wallet } from "lucide-react";
 import { motion } from "framer-motion";
+import WalletConnect from "./WalletConnect";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="bg-[#0a0f1e] shadow-lg w-full relative z-50">
       <div className="flex items-center justify-between px-6 py-4">
-        {/* Left Section: Logo (PHOENIX AI) */}
+        {/* Logo */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           onClick={() => navigate("/")}
@@ -25,7 +25,7 @@ export default function Navbar() {
           PHOENIX AI
         </motion.button>
 
-        {/* Center Section: Desktop Navigation Links */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex flex-1 justify-center gap-6">
           {navLinks.map((link) => (
             <motion.div
@@ -44,44 +44,38 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Right Section: Desktop CTA Buttons */}
-        <div className="hidden md:flex flex-1 justify-end gap-4">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex flex-1 justify-end gap-4 items-center">
+          <motion.div
+            whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate("/buy-token")}
-            className="bg-[#ff00ff] hover:bg-[#ff00ff]/90 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform"
+            className="p-2 rounded-md border border-[#ff00ff]/60 bg-[#121826]/50 shadow-md"
           >
-            BUY $PHX
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
+            <Link
+              to="/buy-token"
+              className="text-lg font-semibold uppercase bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent transition-colors hover:opacity-90 px-4 py-2"
+            >
+              BUY $PHX
+            </Link>
+          </motion.div>
+          <motion.div
+            whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate("/ai-tools")}
-            className="bg-[#6f00ff] hover:bg-[#6f00ff]/90 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform flex items-center gap-2"
+            className="p-2 rounded-md border border-[#ff00ff]/60 bg-[#121826]/50 shadow-md"
           >
-            AI TOOLS
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => alert("Wallet Connect Coming Soon!")}
-            className="flex items-center gap-2 border border-[#ff00ff]/60 text-[#ff00ff] font-semibold py-2 px-4 rounded-full transition-all"
-          >
-            <Wallet className="h-5 w-5" />
-            Connect Wallet
-          </motion.button>
+            <Link
+              to="/ai-tools"
+              className="text-lg font-semibold uppercase bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent transition-colors hover:opacity-90 px-4 py-2"
+            >
+              AI TOOLS
+            </Link>
+          </motion.div>
+          <WalletConnect />
         </div>
 
-        {/* Mobile Right Section: Hamburger Menu & Mobile Connect Wallet Icon */}
+        {/* Mobile Menu */}
         <div className="md:hidden flex items-center gap-4">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            onClick={() => alert("Wallet Connect Coming Soon!")}
-            className="flex items-center gap-2 border border-[#ff00ff]/60 text-[#ff00ff] font-semibold py-2 px-4 rounded-full transition-all"
-          >
-            <Wallet className="h-5 w-5" />
-          </motion.button>
+          <WalletConnect />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white text-2xl focus:outline-none"
@@ -91,7 +85,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-6 pb-4">
           <div className="flex flex-col gap-4">
@@ -107,33 +101,32 @@ export default function Navbar() {
               </div>
             ))}
             <div className="flex flex-col gap-4 mt-4">
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  navigate("/buy-token");
-                }}
-                className="bg-[#ff00ff] hover:bg-[#ff00ff]/90 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform"
+              <motion.div
+                whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="p-2 rounded-md border border-[#ff00ff]/60 bg-[#121826]/50 shadow-md"
               >
-                BUY $PHX
-              </button>
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  navigate("/ai-tools");
-                }}
-                className="bg-[#6f00ff] hover:bg-[#6f00ff]/90 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-transform flex items-center justify-center gap-2"
+                <Link
+                  to="/buy-token"
+                  className="text-lg font-semibold uppercase bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent transition-colors hover:opacity-90 block px-4 py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  BUY $PHX
+                </Link>
+              </motion.div>
+              <motion.div
+                whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="p-2 rounded-md border border-[#ff00ff]/60 bg-[#121826]/50 shadow-md"
               >
-                AI TOOLS
-              </button>
-              <button
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  alert("Wallet Connect Coming Soon!");
-                }}
-                className="flex items-center justify-center gap-2 border border-[#ff00ff]/60 text-[#ff00ff] font-semibold py-2 px-4 rounded-full transition-all"
-              >
-                Connect Wallet
-              </button>
+                <Link
+                  to="/ai-tools"
+                  className="text-lg font-semibold uppercase bg-gradient-to-r from-[#ff00ff] to-[#6f00ff] bg-clip-text text-transparent transition-colors hover:opacity-90 block px-4 py-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  AI TOOLS
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>

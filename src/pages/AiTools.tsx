@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useActiveAccount } from "thirdweb/react";
 
 const REQUIRED_PHX = 200000;
-const SIMULATED_BALANCE = 300000;
+const SIMULATED_BALANCE = 0;
 
 const tools = [
   { name: "Twitter Tracker", description: "Track crypto sentiment on Twitter." },

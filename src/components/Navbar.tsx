@@ -73,7 +73,7 @@ export default function Navbar() {
           <WalletConnect />
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Top Bar: WalletConnect + Hamburger */}
         <div className="md:hidden flex items-center gap-4">
           <WalletConnect />
           <button
@@ -127,6 +127,10 @@ export default function Navbar() {
                   AI TOOLS
                 </Link>
               </motion.div>
+              {/* Mobile WalletConnect Menu Item */}
+              <div className="p-2">
+                <WalletConnect />
+              </div>
             </div>
           </div>
         </div>

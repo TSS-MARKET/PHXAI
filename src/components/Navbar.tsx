@@ -44,7 +44,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTAs */}
+        {/* Desktop CTAs (Wallet removed) */}
         <div className="hidden md:flex flex-1 justify-end gap-4 items-center">
           <motion.div
             whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
@@ -70,12 +70,10 @@ export default function Navbar() {
               AI TOOLS
             </Link>
           </motion.div>
-          <WalletConnect />
         </div>
 
-        {/* Mobile Top Bar: WalletConnect + Hamburger */}
+        {/* Mobile Right Section: Only Hamburger */}
         <div className="md:hidden flex items-center gap-4">
-          <WalletConnect />
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-white text-2xl focus:outline-none"
@@ -85,7 +83,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden px-6 pb-4">
           <div className="flex flex-col gap-4">
@@ -127,10 +125,14 @@ export default function Navbar() {
                   AI TOOLS
                 </Link>
               </motion.div>
-              {/* Mobile WalletConnect Menu Item */}
-              <div className="p-2">
+              {/* Wallet Option as a Square Box in Mobile Menu */}
+              <motion.div
+                whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="p-2 rounded-md border border-[#ff00ff]/60 bg-[#121826]/50 shadow-md"
+              >
                 <WalletConnect />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

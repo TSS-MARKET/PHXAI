@@ -1,6 +1,6 @@
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom"; // Changed to HashRouter
+import { HashRouter, Routes, Route } from "react-router-dom"; // Using HashRouter
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
@@ -29,8 +29,9 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <ThirdwebProvider 
-    clientId="your-client-id"
+    clientId="3926c1efa1e7db25e00965547e2b47f4" 
     activeChain={Binance}
+    autoConnect={true}  // Enable auto connect so wallet persists on refresh
   >
     <HashRouter>
       <QueryClientProvider client={queryClient}>
